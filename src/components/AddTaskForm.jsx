@@ -6,6 +6,8 @@ const AddTaskForm = ({ addTask }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        addTask(inputValue)
+        setInputValue('');
     }
 
     return (
@@ -16,8 +18,9 @@ const AddTaskForm = ({ addTask }) => {
                     name='text'
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
+                    placeholder="Agrega una tarea"
                 />
-                <button type="submit" onClick={() => addTask(inputValue)}>Agregar</button>
+                <button type="submit">Agregar</button>
                 {console.log(inputValue)}
             </form>
         </>
